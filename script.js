@@ -16,8 +16,8 @@ function generatePassword() {
     )
   );
   if (passLength < 8 || passLength > 128 || isNaN(passLength)) {
-    alert("Please refresh the page and select a number between 8 - 128");
-    return "";
+    alert("Please select a number between 8 - 128");
+    return generatePassword();
   } else {
     var lowerCaseUse = confirm(
       "would you like your password to include lower case characters?"
@@ -53,17 +53,15 @@ function generatePassword() {
       numberUse === false &&
       symbolUse === false
     ) {
-      alert(
-        "Please refresh the page and select at least one criteria to generate your password"
-      );
-      return "";
+      alert("Please select at least one criteria to generate your password");
+      return generatePassword();
     } else {
       for (var i = 0; i < passLength; i++) {
         password =
           password +
           passFeatures.charAt(Math.floor(Math.random() * passFeatures.length));
-        return password;
       }
+      return password;
     }
   }
 }

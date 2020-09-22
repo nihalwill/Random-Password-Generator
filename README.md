@@ -14,3 +14,9 @@ Same thing if no criteria selected --need to find way to keep prompting
 Code is now returning 1 character after generate password selected
 Need to find way to display entire code
 Can see entire code is working properly until the very end during for-loop where only 1 character is displayed
+
+---
+
+Fixed prompt bypass of length with return to function feature
+Had to define "password" and put the "return password" feature outside the for loop
+Added return to function re-start if no critera elements were selected via returnin generate password function
